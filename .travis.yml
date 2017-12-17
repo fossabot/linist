@@ -23,6 +23,7 @@ script:
   - npm run setup
 
 after_success:
+  - npm run report-coverage
   - npm run semantic-release
 
 branches:
