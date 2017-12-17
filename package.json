@@ -5,6 +5,7 @@
   "main": "dist/Linist.js",
   "scripts": {
     "start": "npm run cover",
+    "release": "npm run setup && git add . && npm run commit && git push",
     "test": "mocha --require babel-register",
     "cover": "nyc --reporter=html --reporter=text --reporter=lcov npm t",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",

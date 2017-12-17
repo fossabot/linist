@@ -11,6 +11,9 @@ notifications:
   email: true
 
 node_js:
+  - 'node'
+  - 'iojs'
+  - 'lts/*'
   - '9'
   - '8'
   - '7'
