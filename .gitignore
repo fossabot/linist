@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# Visual Studio Code Related Files
+.vscode
+
+# Distribution Version
+dist
