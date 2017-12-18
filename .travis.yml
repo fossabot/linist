@@ -38,6 +38,6 @@ after_success:
 
 branches:
 
-only:
+  only:
     - master
     - /greenkeeper/
