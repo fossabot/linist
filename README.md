@@ -1,4 +1,6 @@
 # linist
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/umut-sahin/linist.svg)](https://greenkeeper.io/)
 A Linear Doubly Linked List implementation with Array like prototype
 
 [![License](https://img.shields.io/npm/l/linist.svg)](http://opensource.org/licenses/MIT)
