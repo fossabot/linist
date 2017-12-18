@@ -32,7 +32,7 @@ const commonjsDefault = commonjs();
 const babelDefault = babel({
   presets: [
     [
-      "es2015", {
+      "env", {
         "modules": false
       }
     ]
