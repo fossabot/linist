@@ -19,8 +19,8 @@ node_js:
   - '6'
 
 before_install:
-- npm install -g npm
-- npm install -g greenkeeper-lockfile
+  - npm install -g npm
+  - npm install -g greenkeeper-lockfile
 
 before_script:
   - npm prune
@@ -40,4 +40,4 @@ branches:
 
 only:
     - master
-    - /^greenkeeper/
+    - /greenkeeper/
