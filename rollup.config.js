@@ -6,99 +6,78 @@ import {
   minify
 } from "uglify-es";
 
-export default [{
-  input: "src/Linist.js",
-  output: [{
-      file: "dist/Linist.js",
-      format: "umd",
-      name: "Linist",
-      sourcemap: true
-    }, {
-      file: "dist/Linist.mjs",
-      format: "es",
-      name: "Linist",
-      sourcemap: true
-    },
-    {
-      file: "dist/Linist.esm.js",
-      format: "es",
-      name: "Linist",
-      sourcemap: true
-    }
+const input = "src/Linist.js";
+
+const output = [{
+    file: "dist/Linist.js",
+    format: "umd",
+    name: "Linist",
+    sourcemap: true
+  }, {
+    file: "dist/Linist.mjs",
+    format: "es",
+    name: "Linist",
+    sourcemap: true
+  },
+  {
+    file: "dist/Linist.esm.js",
+    format: "es",
+    name: "Linist",
+    sourcemap: true
+  }
+];
+
+const resolveDefault = resolve();
+const commonjsDefault = commonjs();
+const babelDefault = babel({
+  presets: [
+    [
+      "es2015", {
+        "modules": false
+      }
+    ]
   ],
   plugins: [
-    resolve(),
-    commonjs(),
-    babel({
-      presets: [
-        [
-          "es2015", {
-            "modules": false
-          }
-        ]
-      ],
-      plugins: [
-        "external-helpers"
-      ],
-      babelrc: false,
-      exclude: "node_modules/**"
-    })
+    "external-helpers"
+  ],
+  babelrc: false,
+  exclude: "node_modules/**"
+});
+const uglifyDefault = uglify({
+  "keep_classnames": true,
+  "keep_fnames": true,
+  "ecma": 6,
+  "mangle": true,
+  "compress": {
+    "arrows": true,
+    "sequences": true,
+    "dead_code": true,
+    "conditionals": true,
+    "booleans": true,
+    "unused": true,
+    "if_return": true,
+    "join_vars": true,
+    "drop_console": true,
+    "cascade": true,
+    "comparisons": true
+  }
+}, minify);
+
+export default [{
+  input,
+  output,
+  plugins: [
+    resolveDefault,
+    commonjsDefault,
+    babelDefault
   ]
 }, {
-  input: "src/Linist.js",
-  output: [{
-      file: "dist/Linist.min.js",
-      format: "umd",
-      name: "Linist",
-      sourcemap: true
-    }, {
-      file: "dist/Linist.min.mjs",
-      format: "es",
-      name: "Linist",
-      sourcemap: true
-    },
-    {
-      file: "dist/Linist.esm.min.js",
-      format: "es",
-      name: "Linist",
-      sourcemap: true
-    }
-  ],
+  input,
+  output,
   plugins: [
-    uglify({
-      "keep_classnames": true,
-      "keep_fnames": true,
-      "ecma": 6,
-      "mangle": true,
-      "compress": {
-        "arrows": true,
-        "sequences": true,
-        "dead_code": true,
-        "conditionals": true,
-        "booleans": true,
-        "unused": true,
-        "if_return": true,
-        "join_vars": true,
-        "drop_console": true,
-        "cascade": true,
-        "comparisons": true
-      }
-    }, minify),
-    resolve(),
-    commonjs(),
-    babel({
-      presets: [
-        [
-          "es2015", {
-            "modules": false
-          }
-        ]
-      ],
-      plugins: [
-        "external-helpers"
-      ],
-      babelrc: false,
-      exclude: "node_modules/**"
-    })
+    uglifyDefault,
+    resolveDefault,
+    commonjsDefault,
+    babelDefault
   ]
 }];
