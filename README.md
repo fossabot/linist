@@ -12,3 +12,8 @@ A Linear Doubly Linked List implementation with Array like prototype
 [![DevDependencies Status](https://david-dm.org/umut-sahin/linist/dev-status.svg)](https://david-dm.org/umut-sahin/linist?type=dev)
 [![NSP Status](https://nodesecurity.io/orgs/linist/projects/16525912-3f0e-4a32-a965-c2bfa58c230f/badge)](https://nodesecurity.io/orgs/linist/projects/16525912-3f0e-4a32-a965-c2bfa58c230f)
 [![Semantic Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fumut-sahin%2Flinist.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fumut-sahin%2Flinist?ref=badge_shield)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fumut-sahin%2Flinist.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fumut-sahin%2Flinist?ref=badge_large)
